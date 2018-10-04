@@ -31,14 +31,40 @@ class Hero {
         this.startX = this.step * 2; 
         // this property places the hero at the middle block on the x-axis
         
-        this.startY = (this.jump * 5) - 20; 
-        // this property places the hero 5 blocks down from the top row, we subtract by 20 to fix its position.
+        this.startY = (this.jump * 4) + 55; 
+        // this property places the hero 4 blocks down from the top row.
         
         this.x = this.startX; 
-        //this property references the starting position on the x-axis
+        // this.x property references the starting position on the x-axis
         
         this.y = this.startY; 
-        //this property references the starting position on the y-axis
+        // this.y property references the starting position on the y-axis
+
+        this.victory = false;
+        // victory property is set to an initial value of “false” when the object is created.
+    }
+
+    update(){
+        // Check collision here
+        for(let enemy of allEnemies){
+            // Did player x and y collide with enemy?
+            if(this.y === enemy.y && (enemy.x + enemy.step/2 > this.x && 
+        enemy.x < this.x + this.step/2)){
+                this.reset();
+            }
+        }
+        //** ERROR: For some reason when I press up, before the hero sprite reaches the last tile, I get an error
+        // Check win here?
+            // Did player x and y reach final tile?
+        if(this.y == 55){
+            // this.victory = true; we change this property to equal “true” when our hero object reaches the river.
+            if(player.victory === true) {
+                win.cancelAnimationFrame(id); // when I un-comment this.victory = true, this becomes the error
+            }
+            else{
+                id = win.requestAnimationFrame(main); // This does something, I don't know what?
+            }
+        }
     }
 
     // Render method: Draw hero sprite on current x and y coord position
@@ -90,6 +116,12 @@ class Hero {
                 */
                 break;
         }
+    }
+    // Reset Hero
+    reset(){
+        // Set x and y to starting x and y positions
+        this.x = this.startX;
+        this.y = this.startY;
     }
 }
 
