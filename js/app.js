@@ -97,7 +97,7 @@ Enemy.prototype.update = function(dt) {
     }
     //Else
         // Reset position to start
-        this.x = 0;
+        // this.x = 0;
 };
 
 // Draw the enemy on the screen, required method for game
