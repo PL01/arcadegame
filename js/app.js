@@ -95,10 +95,9 @@ Enemy.prototype.update = function(dt) {
         // Increment x by speed * dt.
         this.x += 20 * dt;
     }
-    else{
+    //Else
         // Reset position to start
         this.x = 0;
-    }
 };
 
 // Draw the enemy on the screen, required method for game
