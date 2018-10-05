@@ -20,28 +20,13 @@
 class Hero {
     constructor(){
         this.sprite = 'images/char-boy.png'; 
-        // The image/sprite for our hero, this uses a helper we've provided to easily load images
-        
-        this.step = 101; 
-        // step property will be the distance from one block to another along the x-axis (101 is the width of each block)
-        
+        this.step = 101;
         this.jump = 83; 
-        // block property will be the distance from one block to another along the y-axis (83 is the height of each block)
-        
-        this.startX = this.step * 2; 
-        // this property places the hero at the middle block on the x-axis
-        
+        this.startX = this.step * 2;
         this.startY = (this.jump * 4) + 55; 
-        // this property places the hero 4 blocks down from the top row.
-        
         this.x = this.startX; 
-        // this.x property references the starting position on the x-axis
-        
         this.y = this.startY; 
-        // this.y property references the starting position on the y-axis
-
         this.victory = false;
-        // victory property is set to an initial value of “false” when the object is created.
     }
 
     update(){
@@ -53,17 +38,10 @@ class Hero {
                 this.reset();
             }
         }
-        //** ERROR: For some reason when I press up, before the hero sprite reaches the last tile, I get an error
         // Check win here?
             // Did player x and y reach final tile?
         if(this.y == 55){
-            // this.victory = true; we change this property to equal “true” when our hero object reaches the river.
-            if(player.victory === true) {
-                win.cancelAnimationFrame(id); // when I un-comment this.victory = true, this becomes the error
-            }
-            else{
-                id = win.requestAnimationFrame(main); // This does something, I don't know what?
-            }
+            this.victory = true; // we change this property to equal “true” when our hero object reaches the river.
         }
     }
 
@@ -184,7 +162,7 @@ const bug3 = new Enemy((-101*2.5), 83, 300);
 // with unique values for the x, y paramaters
 // and values for the speed paramater.
 
-const allEnemies = []; 
+const allEnemies = [];
 // allEnemies is an array that stores all our enemies
 
 allEnemies.push(bug1,bug2,bug3); 
