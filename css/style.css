@@ -3,7 +3,7 @@ body {
 }
 
 /*CSS for Modal*/
-.modal-background {
+.modal-bg {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -20,7 +20,7 @@ body {
 }
 
 .modal-title {
-    padding-top: 2rem;
+    padding-top: 2.1rem;
     font-family: 'Press Start 2P', cursive;
     font-size: x-large;
     color: rgb(44, 209, 66);
