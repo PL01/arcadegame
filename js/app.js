@@ -32,13 +32,13 @@ Enemy.prototype.render = function() {
 class Hero {
     constructor() {
         this.sprite = 'images/char-boy.png';
-        this.step = 101;
-        this.jump = 83;
-        this.startX = this.step * 2;
-        this.startY = (this.jump * 4) + 55;
-        this.x = this.startX;
-        this.y = this.startY;
-        this.victory = false;
+        this.step = 101; //width of each tile
+        this.jump = 83; //height of each tile
+        this.startX = this.step * 2; // starting position of the hero on the x-axis
+        this.startY = (this.jump * 4) + 55; // starting position of the hero on the y-axis
+        this.x = this.startX; // references the startX property
+        this.y = this.startY; // references the startY property
+        this.victory = false; // victory property for when the player wins, set to false.
     }
 
     update() {
@@ -50,10 +50,17 @@ class Hero {
                 this.reset();
             }
         }
+        /*Conditional reads as follows:
+            IF the player’s y is on the same axis as our enemy AND 
+            (the enemy's right side is greater thanthe player's right side AND 
+            the enemy's right side is less than the player's righr side), 
+            then we reset the player's position, by calling the reset method.
+        */
         // Check win here?
-        // Did player x and y reach final tile?
+        // Did player's x and y reach final tile?
         if (this.y == 55) {
-            this.victory = true; // we change this property to equal “true” when our hero object reaches the river.
+            this.victory = true; 
+            // we change the victory property to equal “true” when our hero object reaches the river.
         }
     }
 

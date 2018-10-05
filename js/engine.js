@@ -25,7 +25,7 @@ var Engine = (function(global) {
         lastTime,
         id;
 
-    const modal = document.querySelector('.modal-bg');
+    const modal = document.querySelector('.modal-background');
     const replay = document.querySelector('.modal-button');
 
     replay.addEventListener('click', function() {
