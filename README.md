@@ -3,7 +3,7 @@
 ## Table Of Contents
 
 * [Functionality](#functionality)
-* [How To Run Project](#runproject)
+* [How To Run Project](#how-to-run-project)
 * [Gameplay](#gameplay)
 * [Author's Notes](#notes)
 * [Conclusion](#conclusion)
@@ -19,7 +19,7 @@ There are three js files:
 
 For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
 
-## Run Project
+## How To Run Project
 
 To run this project, first you'll need to download the project or clone the repo. To do this, go to the Green button that reads: "Clone or Download". It will give you the option to download the project in a zip folder, which you can extract on your desktop, or clone this repository via git by a url it provides. If you don't know how to clone a repository, here is the documentation from [GitHub Help](https://help.github.com/articles/cloning-a-repository/). Once you've downloaded and extracted or cloned the project, go to the location of the folder, open up the folder, and double click on the index.html file. This will automatically open up the file on your browser. From there you can play the game, or inspect it via your browser's debugging tools. Have fun!
 
@@ -37,7 +37,7 @@ This was followed up by manipulating the starter code for enemy that had to foll
 
 The toughest element was the Update section, and that's because this is where I had to check for collisions and determine how the player win's in code, and this meant editing the engine, so as to make sure the modal pops up and tells us if we won.
 
-##Conclusion
+## Conclusion
 This project proved to be tougher than the last one. I never made a game like this before with moving objects and having functions where touching entities bring a result. It was tricky, and I had to use tutorials to grasp some major elements, but a fun experience, and I'm proud to say I made an arcade video game, and its based on one of my favorites. 
 
 ## Dependencies
