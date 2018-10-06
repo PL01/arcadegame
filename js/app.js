@@ -1,3 +1,5 @@
+'use strict'; // Eliminates bad syntax from executing, requires you to declare a variable before using it.
+
 // Enemies our player must avoid
 var Enemy = function(x,y,speed) {
     this.x = x; // property for the x-axis position of the enemies, set to x.
@@ -16,10 +18,10 @@ Enemy.prototype.update = function(dt) {
         // Move forward
         // Increment x by speed * dt.
         this.x += this.speed * dt; 
-        //multiplying by dt will give the enemy a constant speed across the gameboard
+        // Multiplying by dt will give the enemy a constant speed across the gameboard.
     }
     else {
-        // Reset position to the starting position along the x-axis. Helps to give it the looping effect.
+        // Reset the starting position along the x-axis. Helps to give it the looping effect.
         this.x = this.resetPosition;
     }
 };
@@ -45,14 +47,15 @@ class Hero {
         // Check collision here
         for (let enemy of allEnemies){
             // Did player x and y collide with enemy?
-            if (this.y === enemy.y && (enemy.x + enemy.step / 2 > this.x &&
+            if (this.y === enemy.y && ((enemy.x + enemy.step / 2) + 25 > this.x &&
                 enemy.x < this.x + this.step / 2)) {
+                //alert(stop); //used to check if enemy is colliding right.
                 this.reset();
             }
         }
         /*Conditional reads as follows:
             IF the player’s y is on the same axis as our enemy AND 
-            (the enemy's right side is greater thanthe player's right side AND 
+            (the enemy's right side is greater than the player's right side AND 
             the enemy's right side is less than the player's righr side), 
             then we reset the player's position, by calling the reset method.
         */
